@@ -9,35 +9,275 @@
 ////////////
 
 .header {
-  // height: 3em;
   display: flex;
-  background-color: red;
   align-items: center;
-  position: relative;
+  background-color: white;
   padding: 1em 2em;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  .language {
+    margin-left: auto;
+    
+    .language_choise {
+      cursor: pointer;
+    }
+  }
+
+  .menu {
+    display: flex;
+    .menu__item {
+      padding: 0 1em 0 1em;
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+
+  .logo {
+    font-weight: 900;
+  }
 }
 
-.menu {
-  display: flex;
 
+
+// MAIN
+
+main {
+  margin-top: 4em;
 }
 
-.menu__item {
-  padding: 0 1em 0 1em;
-}
-.menu__item a {
-  text-decoration: none;
-  color: black;
+.button {
+  padding: 0.75em 2em;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
 }
 
-.logo {
+.button:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.25s ease-in-out;
+}
+
+.bold {
   font-weight: 900;
 }
 
-.language {
+.light {
+  font-weight: 100;
 }
 
 ///////////////
 // SECTION 1 //
 ///////////////
+
+.section__about {
+  display: flex;
+  width: 100%;
+  height: 65vh;
+  justify-content: space-between;
+  gap: 5%;
+  padding: 0 5%;
+}
+
+.section__about__welcome {
+  font-size: 1.25em;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+}
+.title {
+  border-bottom: 2px solid black;
+  padding: 0.3em 0;
+  font-size: 2em;
+}
+
+.section__about__button {
+  margin-left: auto;
+}
+
+.image__roll {
+  width: 60%;
+  height: 100%;
+  position: relative;
+}
+
+///////////////
+// SECTION 2 //
+///////////////
+
+.section__we-are {
+  font-size: 1.25em;
+  text-align: center;
+  padding: 6em 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  article {
+    max-width: 1000px;
+    min-width: 200px;
+  }
+}
+
+///////////////
+// SECTION 3 //
+///////////////
+
+.section__novedades {
+  display: flex;
+  justify-content: center;
+  h2 {
+    text-align: center;
+  }
+  article {
+    width: 80%;
+    max-width: 800px;
+    .gallery-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .gallery {
+        display: flex;
+        justify-content: space-between;
+        max-width: 800px;
+        margin: 3em 0;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+
+        .gallery__image {
+          height: 300px;
+          width: 225px;
+          overflow: hidden;
+          position: relative;
+          object-fit: contain;
+          position: relative;
+
+          img {
+            min-height: 400px;
+          }
+          .gallery__image__detalles {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+
+        .over {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          z-index: 10;
+          padding: 1.5em;
+          color: white;
+        }
+
+        .gallery__image:hover {
+
+
+        }
+      }
+      .secondary-button {
+        margin-left: auto;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+      }
+
+      .secondary-button:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+  .gallery {
+    display: flex;
+  }
+}
+
+
+
+.gallery__image:after {
+  content:"";
+  position: absolute;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 25%,rgba(0,0,0,0.85) 100%);
+}
+
+// IMAGE ROLL
+
+.image__roll__images {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+
+
+  .image__roll__image {
+    height: 100%;
+    min-width: 100%;
+    overflow: hidden;
+    border: 1px solid white;
+    position: relative;
+    left: -100%;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.image__roll__roller {
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .roller_image {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: rgba(255,255,255, 0.5);
+    position: relative;
+    cursor: pointer;
+  }
+  .roller_image--selected:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background-color: rgba(255,255,255);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
