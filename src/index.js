@@ -9,6 +9,7 @@ const NotFoundHTML = './404.html';
 
 
 http.createServer( (req, res) => {
+    console.log(req.url)
     switch (req.url) {
         case '/':
             renderHTML(indexHTML, req, res);
